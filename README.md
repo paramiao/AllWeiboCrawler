@@ -28,4 +28,4 @@ crawlDriverw.getWeibos('比特币', 1, 1)
 
 # UPDATED
 *增加了一个searchapi.py, 基于tornado框架，启动后直接访问/weibos
-**参数为site代表请求的网站，page和limit为分页参数
+*参数为site代表请求的网站名，page和limit为分页参数,如：/weibos?site=新浪&page=1&limit=10

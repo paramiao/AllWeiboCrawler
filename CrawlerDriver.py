@@ -36,6 +36,6 @@ class CrawlerDriver:
 if __name__ == '__main__':
     wcd = CrawlerDriver()
     wcd.setWeiboCrawler('腾讯', '腾讯帐号', '腾讯密码')
-    wcd.setWeiboCrawler('新浪')
-    wcd.setWeiboCrawler('和讯')
+    #wcd.setWeiboCrawler('新浪')
+    #wcd.setWeiboCrawler('和讯')
     print wcd.getWeibos('比特币', 1, 1)
