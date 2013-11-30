@@ -6,6 +6,7 @@ AllWeiboCrawler
 
 # 基本说明
 * 腾讯需要用户名密码，新浪和和讯无需用户名密码
+* 依赖BeautifulSoup，如果使用api，需要tornado
 * 基本只用调用CrawlerDriver.py里面的CrawlerDriver里的通用方法即可，返回值中，
 total_count——总数
 msgs——微博列表
