@@ -10,7 +10,7 @@ from SinaWeiboCrawler import SinaWeiboCrawler
 class CrawlerDriver:
 
     def __init__(self):
-        pass
+        self.sid = None
 
 
     def setWeiboCrawler(self, name, username=None, password=None):
@@ -21,7 +21,10 @@ class CrawlerDriver:
             }
         if name == '腾讯':
             self.weibo_crawler = parse_dict[name](username, password)
-            self.weibo_crawler.getSid()
+            if self.sid:
+                self.weibo_crawler.sid = self.sid
+            else:
+                self.sid = self.weibo_crawler.getSid()
         else:
             self.weibo_crawler = parse_dict[name]()
 
