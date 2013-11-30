@@ -54,7 +54,7 @@ class WeibosHandler(BaseHandler):
         keyword = self.get_argument('kw', '比特币')
         count = self.get_argument('limit', 10)
         self.crawl_driver.setWeiboCrawler(weibo_type.encode('utf8'), options.tencent_username, options.tencent_password)
-        result = self.crawl_driver.getWeibos(keyword, page, count)
+        result = self.crawl_driver.getWeibos(keyword, int(page), int(count))
         self.write(tornado.escape.json_encode(result))
 
 

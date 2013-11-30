@@ -12,6 +12,7 @@ class TencentWeiboCrawler(WeiboCrawler):
 
     def __init__(self, username, password, isMD5=False):
         self.username = str(username)
+        self.sid = None
         if isMD5:
             self.password = password
         else:
