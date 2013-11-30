@@ -17,7 +17,7 @@ class HexunWeiboCrawler(WeiboCrawler):
             'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25',
             }
 
-    def getWeibos(self, keyword,  page=1):
+    def getWeibos(self, keyword,  page=1, count=None):
         url = 'http://t.hexun.com/k/topic.html?type=1&value=%s&pg=%d' % (json.dumps(keyword).replace('\\', '%').replace('"', ''), page)
         result = WeiboCrawler.request(self, url, self.headers)
         if 'result' in result and result['result']:
@@ -25,7 +25,7 @@ class HexunWeiboCrawler(WeiboCrawler):
             soup = BeautifulSoup(infos)
             total_soup = soup.select('.headerR1')[0]
             total_num = total_soup.get_text().split('共')[-1].split('条')[0].strip()
-            return_val = {'total': int(total_num), 'msgs':[]}
+            return_val = {'total_count': int(total_num), 'msgs':[]}
             allmsgs = []
             msgs_soup = soup.select('.nr_con')
             for msg_soup in msgs_soup:
