@@ -7,7 +7,7 @@ from TencentWeiboCrawler import TencentWeiboCrawler
 from HexunWeiboCrawler import HexunWeiboCrawler
 from SinaWeiboCrawler import SinaWeiboCrawler
 
-class WeiboCrawlerDriver:
+class CrawlerDriver:
 
     def __init__(self):
         pass
@@ -31,7 +31,7 @@ class WeiboCrawlerDriver:
 
 
 if __name__ == '__main__':
-    wcd = WeiboCrawlerDriver()
+    wcd = CrawlerDriver()
     wcd.setWeiboCrawler('腾讯', '腾讯帐号', '腾讯密码')
     wcd.setWeiboCrawler('新浪')
     wcd.setWeiboCrawler('和讯')
